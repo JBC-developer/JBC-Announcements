@@ -1,6 +1,10 @@
 import discord
 from discord.ext import commands
 from discord import app_commands
+import os
+
+from keep_alive import keep_alive
+keep_alive()
 
 bot = commands.Bot(command_prefix="?", intents= discord.Intents.all())
 
@@ -40,4 +44,4 @@ async def announce(interaction : discord.Interaction, message : str):
 
     
 
-bot.run("MTIzMDAwNDQ0MTE5MzY0ODE1OA.GS7s8i.HTcIXjd8adhCOX-tAy_hnW_KwqcCIvhGXYKS6s")
+bot.run(os.environ.get('BOT_TOKEN'))
